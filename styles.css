@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.cursor{
+    will-change: transform;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: fixed;
+    background-color: #4561E8;
+    z-index: 200;
+    mix-blend-mode:multiply;
+    transition: transform 0.3s ease-out;
+    pointer-events: none;
+}
+
+.cursor-on-buttons{
+    background-color: transparent;
+    border: 2px solid #4561E8;
+    mix-blend-mode: normal;
+    height: 50px;
+    width: 50px;
+}
+
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20vw;
+    padding: 20px;
+}
+
+nav img{
+    height: 50px;
+}
+
+.nav-contents{
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.nav-contents a{
+    font-size: 17px;
+    line-height: 1.5;
+    text-decoration: none; /* Remove underlines */
+    color: #000; /* Change the text color to your desired color */
+}
+
+.nav-contents a.active{
+    color: #4561E8;
+    line-height: 1.5;
+    border-bottom: 2px solid #4561E8;
+}
+
+.nav-buttons{
+    margin-right: 35px;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-buttons button{
+    font-size: 14px;
+    padding: 9px 25px;
+    border-radius: 10px;
+    font-family: 'Readex Pro', sans-serif;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-buttons button:nth-child(1)
+{
+    border: 2px solid #4561E8;
+    background-color: #fff;
+    color: #4561E8;
+}
+
+.nav-buttons button:nth-child(2)
+{
+    background-color: #4561E8;
+    color: #fff;
+    box-shadow: 0 4px 6px #8598f6, 0 1px 3px #4561E8;
+}
+
+.nav-buttons button:active{
+    transform: translateY(2px);
+}
+
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f1f7fe;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#blue-banner{
+    object-fit: cover;
+    height: 100vh;
+    width: 33%;
+    z-index: 5;
+}
+
+#vehicle-preview{
+    position: absolute;
+    top: 23%;
+    height: 50%;
+    z-index: 10;
+}
+
+#page1 h2{
+    position: absolute;
+    top: 15%;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    z-index: 5;
+}
+#page1 h1{
+    position: absolute;
+    top: 77%;
+    left: 35.5%;
+    font-size: 40px;
+    color: #fff;
+    z-index: 5;
+}
+
+#page1 h3{
+    position: absolute;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    top: 85%;
+    z-index: 5;
+}
+
+.vehicle-icon{
+    border-radius: 50%;
+    background-color: #dae9fa;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.vehicle-icon img{
+    height: 30px;
+}
+
+#vehicle1{
+    position: absolute;
+    top: 20%;
+    left: -1.5%;
+}
+
+#vehicle2{
+    position: absolute;
+    top: 32%;
+    left: 3%;
+}
+
+#vehicle3{
+    width: 95px;
+    height: 95px;
+    background-color: #5b76f8;
+    position: absolute;
+    top: 44%;
+    left: 7%;
+}
+
+ #vehicle3 img{
+    height: 45px;
+}
+
+#vehicle4{
+    position: absolute;
+    top: 60%;
+    left: 3%;
+}
+
+#vehicle5{
+    position: absolute;
+    top: 72%;
+    left: -1.5%;
+}
+
+/* Up and Down Animations for Icons */
+@keyframes v1Up{
+    0%
+    {
+        top: 20%;
+        left: -1.5%;
+    }
+    50%
+    {
+        top: 20%;
+        left: -3%;
+    }
+    100%
+    {
+        top: 72%;
+        left: -1.5%;
+    }
+}
+@keyframes v2Up{
+    from
+    {
+        top: 32%;
+        left: 3%;
+    }
+    to
+    {
+        top: 20%;
+        left: -1.5%;
+    }
+}
+
+@keyframes v3Up{
+    from
+    {
+        top: 44%;
+        left: 7%;
+    }
+    to
+    {
+        background-color: #dae9fa;
+        width: 70px;
+        height: 70px;
+        top: 32%;
+        left: 3%;
+    }
+}
+@keyframes v4Up{
+    from
+    {
+        top: 60%;
+        left: 3%;
+    }
+    to
+    {
+        background-color: #4561E8;
+        width: 95px;
+        height: 95px;
+        top: 44%;
+        left: 7%;
+    }
+}
+
+@keyframes v5Up{
+    0%
+    {
+        top: 72%;
+        left: -1.5%;
+    }
+    100%
+    {
+        top: 60%;
+        left: 3%;
+    }
+}
+
+@keyframes v1Down{
+    from
+    {
+        top: 20%;
+        left: -1.5%;
+    }
+    to
+    {
+        top: 32%;
+        left: 3%;
+    }
+}
+@keyframes v2Down{
+    from
+    {
+        top: 32%;
+        left: 3%;
+    }
+    to
+    {
+        width: 95px;
+        height: 95px;
+        background-color: #5b76f8;
+        top: 44%;
+        left: 7%;
+    }
+}
+@keyframes enlargeSize{
+    from
+    {
+        height: 30px;
+    }
+    to
+    {
+        height: 45px;
+    }
+}
+@keyframes v3Down{
+    from
+    {
+        top: 44%;
+        left: 7%;
+    }
+    to
+    {
+        background-color: #dae9fa;
+        width: 70px;
+        height: 70px;
+        top: 60%;
+        left: 3%;
+    }
+}
+@keyframes v4Down{
+    from
+    {
+        top: 60%;
+        left: 3%;
+    }
+    to
+    {
+        top: 72%;
+        left: -1.5%;
+    }
+}
+
+@keyframes v5Down{
+    0%
+    {
+        top: 72%;
+        left: -1.5%;
+    }
+    50%
+    {
+        top: 72%;
+        left: -4%;
+    }
+    100%
+    {
+        top: 20%;
+        left: -1.5%;
+    }
+}
+
+#move-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f7fe;
+    border-radius: 50%;
+    padding: 10px;
+    position: absolute;
+    top: 43%;
+    left: 1%;
+    cursor: pointer;
+}
+
+#move-up i, #move-down i{
+    font-size: 30px;
+    color: #4561E8;
+}
+
+#move-down{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f7fe;
+    border-radius: 50%;
+    padding: 10px;
+    position: absolute;
+    top: 50.5%;
+    left: 1%;
+    cursor: pointer;
+}
+
+#move-up:hover, #move-down:hover{
+    background-color: #dae9fa;
+}
+
+#page2{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./images/2nd_page_bg.png);
+    background-position: center;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15%;
+    position: relative;
+}
+
+#search{
+    width: 50%;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    box-shadow: 0px 4px 6px #8598f6, 0px 1px 3px #4561E8;
+}
+
+#search input{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dae9fa;
+    font-size: 15px;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+#vehicle-year,#vehicle-price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+}
+
+#year-text,#price-text{
+    display: flex;
+    gap: 5px;
+}
+
+#year-text i, #year-text p{
+    color: #4561E8;
+}
+
+#price-text i, #price-text p{
+    color: #4561E8;
+}
+
+#search button{
+    background-color: #4561E8;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    font-family: 'Readex Pro', sans-serif;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 8px rgba(50, 21, 213, 0.5); /* Adjust the values as needed */
+    transition: box-shadow 0.3s ease; /* Add a smooth transition effect */
+    cursor: pointer;
+}
+
+#search button:active{
+    transform: translateY(2px);
+}
+
+#search button i,#search button span{
+    color: #fff;
+    font-weight: 300;
+}
+
+ /* Dropdown Styles */
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 113%;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 8px;
+    text-align: left;
+    font-size: 15px;
+    color: #4561E8;
+    cursor: pointer;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: #dae9fa;
+}
+
+#page2-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page2-text h4{
+    color: #4561E8;
+    font-size: 15px;
+}
+
+#page2-text h1{
+    color: #000;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+#free-trial, #proceed-with-payment, #own-your-dream{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 19%;
+    padding: 10px;
+}
+
+#free-trial-text, #proceed-with-payment-text, #own-your-dream-text{
+    border-radius: 20px;
+    background-color: #4561E8;
+    background-image: linear-gradient(315deg, #4561e8 0%, #dcd2e5 74%);
+    box-shadow: #4560e852 0px -23px 25px 0px inset, #4560e834 0px -36px 30px 0px inset, #4560e812 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(72, 28, 148, 0.09) 0px 16px 8px, rgba(40, 31, 135, 0.068) 0px 32px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;    
+    padding: 20px;
+}
+
+.img-circle{
+    border-radius: 50%;
+    border: 2px solid #4561E8;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#free-trial img, #proceed-with-payment img{
+    height: 90px;
+}
+
+#own-your-dream img{
+    height: 60px;
+}
+
+#free-trial p, #proceed-with-payment p, #own-your-dream p{
+    font-size: 14px;
+    text-align: justify;
+}
+
+#free-trial h3, #proceed-with-payment h3, #own-your-dream h3{
+    font-size: 17px;
+    text-align: center;
+}
+
+#free-trial{
+    position: absolute;
+    top: 32%;
+    left: 18%;
+}
+
+#proceed-with-payment{
+    position: absolute;
+    top: 48%;
+    left: 41%;
+}
+
+#own-your-dream{
+    position: absolute;
+    top: 33%;
+    left: 65%;
+}
+
